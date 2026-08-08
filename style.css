@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600&family=Inter&family=IBM+Plex+Mono&display=swap');
+
+:root {
+    --bg-page: #0B2542;
+    --bg-card: #F7FAFC;
+    --card-border: #C7D6E2;
+    --bg-input: #EDF2F7;
+    --heading: #081B33;
+    --label: #4A6178;
+    --text-primary: #081B33;
+    --placeholder: #93A6B8;
+    --focus-ring: #229873;
+    --icon-color: #229873;
+    --icon-hover: #197658;
+    --btn-bg: #197658;
+    --btn-text: #F3FBF8;
+    --btn-hover: #229873;
+    --btn-active: #10573F;
+    --error-text: #A83A2C;
+    --radius: 12px;
+    --shadow: rgba(5, 20, 40, 0.40);
+    --font-heading: 'Sora', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-page);
+    font-family: var(--font-body);
+}
+
+.container {
+    background-color: var(--bg-card);
+    border: 1px solid var(--card-border);
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border-radius: var(--radius);
+    width: clamp(300px, 90vw, 420px);
+    box-shadow: 0 12px 32px var(--shadow);
+}
+
+.container h2 {
+    font-family: var(--font-heading);
+    color: var(--heading);
+    font-size: clamp(1.25rem, 4vw, 1.6rem);
+}
+
+form {
+    margin: 2rem 0 1rem 0;
+}
+
+.container form p {
+    color: var(--label);
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+form input, select, button {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: calc(var(--radius) - 6px);
+    font-family: var(--font-body);
+}
+
+form input {
+    border: 1px solid var(--card-border);
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    height: 2.75rem;
+    font-family: var(--font-mono);
+}
+
+form input::placeholder {
+    color: var(--placeholder);
+}
+
+form input:focus, form select:focus {
+    box-shadow: 0 0 0 2px var(--focus-ring);
+}
+
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.dropdown .from,
+.dropdown .to {
+    flex: 1;
+    min-width: 0;
+}
+
+.dropdown i {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    margin-top: 1rem;
+    color: var(--icon-color);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.dropdown i:hover {
+    color: var(--icon-hover);
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--card-border);
+    border-radius: calc(var(--radius) - 8px);
+    background-color: var(--bg-input);
+}
+
+.select-container select {
+    font-size: 1rem;
+    width: auto;
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+.select-container img {
+    max-width: 2.5rem;
+}
+
+.msg {
+    margin: 2rem 0 2rem 0;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    word-break: break-word;
+}
+
+.msg.error {
+    color: var(--error-text);
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+}
+
+form button {
+    height: 2.75rem;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-size: 1.05rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+form button:hover {
+    background-color: var(--btn-hover);
+}
+
+form button:active {
+    background-color: var(--btn-active);
+}
